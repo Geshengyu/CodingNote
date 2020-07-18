@@ -1,7 +1,5 @@
 ## 一、Java
 
-[TOC]
-
 ### 1.1 基础知识
 
 #### 1.1.1 JDK与JRE的区别？
@@ -56,6 +54,8 @@ Servlet需要在web.xml中配置，**一个Servlet可以设置多个URL访问**�
 ### 1.2 集合
 
 ![](https://github.com/Geshengyu/CodingNote/blob/master/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6.png?raw=true)
+
+
 
 ![img](https://www.runoob.com/wp-content/uploads/2014/01/2243690-9cd9c896e0d512ed.gif)
 
@@ -235,10 +235,6 @@ HashMap、HashTable和ConCurrentHashMap的区别？
 > ConCurrentHashMap：线程安全，CAS+同步锁，数组+链表+红黑树
 >
 > HashMap允许Key和Value为null，其他两个不允许为null
-
-
-
-
 
 ### 1.3 序列化
 
@@ -465,13 +461,6 @@ JDBC对事务管理的支持（四个）：
 9. 不同版本的之间intern()方法的区别
 
    
-
-10. 
-
-    
-
-
-
 
 
 ### 1.6 垃圾回收
@@ -736,10 +725,6 @@ synchronized和ReentrantLock都是可重入锁
 
 
 
-
-
-
-
 #### 同步方法与同步代码块的区别？
 
 **同步方法**默认用this或者当前类class对象作为锁。用synchronized关键字修饰方法。
@@ -845,10 +830,7 @@ public class Solution {
 
 #### 1.8.2 工厂模式
 
-
-
 #### 1.8.3 代理模式
 
-
-
 #### 8.2.生产者——消费者问题
+
