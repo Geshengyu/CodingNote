@@ -1,10 +1,12 @@
 ## 一、Java
 
+本部分记录一些常见的Java面试题，以考促学，可以快速掌握一些知识点，当然后续可以持续关注Java源码内的内容掌握全面的知识。
+
 ### 1.1 基础知识
 
 #### 1.1.1 JDK与JRE的区别？
 
-> 1. JDK——Java开发工具包，包含JRE以及编译器（javac）和工具（javadoc，jdb）。能创建和编译程序。
+> 1. JDK——Java开发工具包，包含JRE以及编译器（javac）和工具（javadoc，jdb），能创建和编译程序。
 > 2. JRE——Java运行时环境，包含Java虚拟机，Java类库，Java命令以及其他一些基础构件。但是，它不能用来创建程序。
 
 #### 1.1.2 抽象类和接口的区别？
@@ -36,10 +38,26 @@ input.close;
 
 方法二：通过BufferedReader
 
-> ```java
-> BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-> String s = input.readLine();
-> ```
+```java
+BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+String s = input.readLine();
+```
+
+#### 1.1.5 泛型
+
+##### 是什么？
+
+允许在定义类、接口时通过一个标志来表示类的属性、方法的返回值及参数类型，这个类型在使用时确定。例如集合容器中某个参数的类型不能确定，这时将**元素的类型设计成一个参数**，这个参数就是泛型。
+
+```java 
+Collection<E>
+```
+
+##### 为什么？
+
+![1603631705495](C:\Users\Geshengyu\AppData\Roaming\Typora\typora-user-images\1603631705495.png)
+
+##### 怎么用？
 
 #### 1.1.5 Servlet总结
 
@@ -788,6 +806,64 @@ Java对象头
 
 Monitor
 
+#### 线程的可见性
+
+可见、有序、原子
+
+what：
+
+why：线程会先将内容读取到**本地缓存**
+
+how：关键字volatile（保持线程的可见性） 
+
+***
+
+cache line
+
+what：缓存行，一次性读取64字节数据进缓存；三级缓存；缓存一致性协议，不取决于volatile关键字；缓存行对齐、伪共享
+
+why：
+
+how：注解@Contended（修饰的变量不会与其他变量位于统一缓存行） 
+
+#### 线程的有序性
+
+指令重排
+
+what：指令有时候不按照顺序执行
+
+why：简单说，为了提高效率
+
+***
+
+乱序存在的条件
+
+what：as-if-serial；不影响单线程的最终一致性
+
+#### 线程的原子性
+
+关键字synchronized
+
+***
+
+DCL
+
+what：double check lock
+
+why：单例模式中，为了保证并发的原子性
+
+How：
+
+```java
+if (INSTANCE == null) {
+    synchronized (Test.class) {
+        if (INSTANCE == null) {
+            // 内部业务逻辑
+        }
+    }
+}
+```
+
 
 
 ### 1.8 设计模式
@@ -828,9 +904,31 @@ public class Solution {
 }
 ```
 
-#### 1.8.2 工厂模式
+#### 1.8.2 策略模式
 
-#### 1.8.3 代理模式
+#### 
 
-#### 8.2.生产者——消费者问题
+#### 1.8.3 工厂模式
+
+#### 代理模式
+
+#### 1.8.4 生产者——消费者问题
+
+### 1.9 Java8函数式编程
+
+lambda表达式
+
+Stream流
+
+自定义类库
+
+Collectors收集器
+
+数据并行化
+
+java8新特性课程：
+
+https://www.bilibili.com/video/BV1ut411g7E9?from=search&seid=3784922521953005352
+
+
 
